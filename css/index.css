@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/media/wallpaper.jpg");
+    text-align: center;
+    color: white;	
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container{
+    margin-top: 15px;
+    padding: 0px 20px 20px 20px;
+    background-color: #20a15c;
+    opacity: 95%;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+h1{
+    margin-top: 10px;
+    font-size: 80px;
+    font-weight: lighter;
+}
+
+h2{
+    font-size: 64px;
+    font-weight: lighter;
+    text-align: right;
+    margin-top: -72px;
+    padding-right: 5px;
+}
+
+button{
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+    width: 30%;
+    height: 60px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+button:hover{
+    background-color: #1b241d;
+    cursor: pointer;
+}
+
+#login{
+    margin-left: 60px;
+    float: left;
+}
+
+#signup{
+    margin-right: 60px;
+    float: right;
+}
+
+section div{
+    font-size: 24px;
+    clear: both;    
+}
+
+input{
+    margin-top: 30px;
+    height: 40px;
+    width: 75%;
+    font-size: 28px;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#email{
+    margin-top: 10px;
+}
+
+.signup_content{
+    display: none;
+}

@@ -1,0 +1,142 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, footer{
+    display: inline-flex;
+    background-color: #18191f;
+    border-radius: 10px;
+    width: 95%;
+    height: fit-content;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.left{
+    float: left;
+}
+.center{
+    display: inline-flex;
+    align-items: center;
+    margin: auto;
+}
+
+.right{
+    float: right;
+}
+
+#menuButton{
+    font-size: 36px;
+    color: white;
+    background-color: #18191f;
+    border: 3px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#day{
+    background-color: #2ec76e;
+    border: 3px solid white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+#icon{
+    border: 3px solid white;
+    border-radius: 50%;
+    padding: 1px;
+    margin-left: 20px;
+}
+
+.center div{
+    margin-left: 20px;
+}
+
+#year, #month{
+    width: inherit;
+    text-align: right;
+}
+
+#info{
+    text-decoration: none;
+    color: white;
+    border: 3px solid white;
+    padding: 5px 15px 5px 15px;
+    border-radius: 50%;
+}
+menu{
+    float: left;
+    text-align: left;
+    background-color: #18191f;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 1px;
+    padding: 0px;
+    border-radius: 5px;
+    display: none;
+    animation-name: animation;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin: top center;
+    position: fixed;
+}
+
+@keyframes animation{
+    0%{
+        transform: rotateX(-90deg) translateY(45px);
+    }
+
+    60%{
+        transform: translateX(60deg);
+    }
+
+    100%{
+        transform: rotateX(0deg) translateY(0px);
+    }
+}
+
+menu a{
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+menu a:hover{
+    background-color: #2ec76e;
+}
+
+footer{
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+    vertical-align: middle;
+}
+
+footer span{
+    margin-right: 20px;
+}
+
+footer img:hover{
+    transform: scale(1.1);
+}
+
+#privacyPolicy{
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border: 3px solid white;
+    border-radius: 10px;
+}

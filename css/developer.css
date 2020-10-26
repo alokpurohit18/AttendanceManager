@@ -1,0 +1,47 @@
+section{
+    width: 90%;
+    height: fit-content;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#seperator{
+    height: 540px;
+    width: 0.7%;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#alok, #shaurya{
+    margin-top: 30px;
+    align-items: center;
+    width: 45%;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #18191f;
+    color: #2ec76e;
+    font-size: 16px;
+}
+
+h2{
+    color: white;
+    font-size: 24px;
+}
+
+figure img{
+    margin-top: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+section a{
+    text-decoration: none;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+section a img:hover{
+    transform: scale(1.1);
+}

@@ -1,0 +1,40 @@
+section{
+    color: #2ec76e;
+    font-size: 16px;
+    width: 90%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
+
+iframe{
+    width: 450px;
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+#instructions{
+    text-align: left;
+    background-color: #18191f;
+    float: left;
+    width: 50%;
+    padding: 0px 10px 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#tutorial{
+    background-color: #18191f;
+    width: 40%;
+    float: right;
+    padding: 0px 10px 10px 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}

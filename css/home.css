@@ -1,0 +1,64 @@
+section {
+    color: #2ec76e;
+    font-size: 16px;
+    width: 90%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+}
+
+#personal_info{
+    margin-top: 20px;
+    margin-left: 12%;
+    background-color: #18191f;
+    border-radius: 10px;
+    text-align: left;
+    width: 35%;
+}
+
+#attendance{
+    width: 35%;
+    background-color: #18191f;
+    margin-top: 20px;
+    margin-right: 12%;
+    border-radius: 10px;
+}
+
+#user_attendance{
+    background-color: black;
+    border: 3px solid white;
+    font-size: 36px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-top: 85px;
+    margin-bottom: 40px;
+    padding-top: 75px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+#attendance_value{
+    align-items: center;
+    margin: auto;
+    font-size: 56px;
+    color: white;
+}
+
+h2{
+    color: white;
+    margin-bottom: 80px;
+}
+
+article div {
+    color: white;
+    padding: 20px;
+}
+
+article span {
+    color: #2ec76e;
+}

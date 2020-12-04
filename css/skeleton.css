@@ -45,6 +45,7 @@ header, footer{
     background-color: #2ec76e;
     border: 3px solid white;
     border-radius: 50%;
+    width: 6%;
     padding: 10px;
 }
 
@@ -71,6 +72,11 @@ header, footer{
     padding: 5px 15px 5px 15px;
     border-radius: 50%;
 }
+
+#name{
+    text-align: left;
+}
+
 menu{
     float: left;
     text-align: left;
@@ -117,8 +123,6 @@ menu a:hover{
 }
 
 footer{
-    padding-left: 20px;
-    padding-right: 20px;
     position: fixed;
     bottom: 2%;
     left: 2%;

@@ -1,7 +1,3 @@
-localStorage.setItem("name", "Alok Rajpurohit"); // all these values need to be retreived from the database
-localStorage.setItem("age", 20); // in the backend as soon as the session is started on 
-localStorage.setItem("email", "alokpurohit18@gmail.com") // successfull login into that account and hence this page
-localStorage.setItem("password", "Alok2000"); // is loaded
 var menuToggle = 0;
 
 function openMenu() {

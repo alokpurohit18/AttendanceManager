@@ -4,32 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Manager - Privacy Policy</title>
+    <title>Attendance Manager - Home</title>
     <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/criteria.css">
     <link rel="icon" type="image/jpg" href="../media/icon.png">
-
-    <style>
-        h2{
-            padding-top: 20px;
-        }
-
-        section {
-            width: 75%;
-            align-items: center;
-            margin: auto;
-            margin-top: 0px;
-            border-radius: 10px;
-            background-color: #18191f;
-        }
-
-        embed {
-            border: 2px solid white;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            width: 75%;
-            height: 460px;
-        }
-    </style>
 </head>
 
 <body>
@@ -73,10 +51,39 @@
     </main>
 
     <section>
-        <h2>Privacy Policy</h2>
-        <embed src="../media/privacy_policy.pdf" type="application/pdf">
-    </section>
+        <form action="set_criteria.php" method="POST" onsubmit="return edit_criteria()">
+            <div id="slider_value">
+                25%
+            </div>
+            <input id="slider" name="slider" type="range" min="25" max="99" value="25" steps="1">
+            <div>
+                <input type="submit" id="save" name="save" value="SAVE">
+            </div>
+        </form>
+        <script>
+            const slideValue = document.getElementById("slider_value");
+            const inputSlider = document.querySelector("input");
+            inputSlider.oninput = (() => {
+                let value = inputSlider.value;
+                slideValue.textContent = value + "%";
+                slideValue.style.left = (value / 2) + "%";
+                slideValue.classList.add("show");
+            });
+            inputSlider.onblur = (() => {
+                slideValue.classList.remove("show");
+            });
 
+            function edit_criteria(){
+                var r = confirm("Do you want to set new attendance criteria?");
+                if(r == false){
+                    return false;
+                }
+                else{
+                    localStorage.setItem("criteria", document.getElementById("slider").value);
+                }
+            }
+        </script>
+    </section>
     <footer>
         <div class="left">
             Attendance Manager<br>2020 ©

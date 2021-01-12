@@ -18,7 +18,7 @@ if (isset($_POST["save"])) {
     } else {
         $query = "UPDATE student SET attendance_criteria='$criteria' WHERE email='$email'";
         $result = $conn->query($query);
-        header("Location: criteria.php");
+        header("LOCATION: criteria.php");
     }
 }
 

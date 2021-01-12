@@ -45,7 +45,7 @@
 					<input type="text" id="name" name="name" placeholder="Name">
 				</div>
 				<div>
-					<input type="number" id="age" name="age" placeholder="Age" min="12" max="60">
+					<input type="number" id="age" name="age" placeholder="Age" min="12" max="65">
 				</div>
 				<input type="submit" class="signup_right" id="signup" name="signup" value="Sign Up">
 			</form>

@@ -71,7 +71,7 @@ if (isset($_POST["signup"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Manager - Home</title>
+    <title>Attendance Manager- Home</title>
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="icon" type="image/jpg" href="../media/icon.png">

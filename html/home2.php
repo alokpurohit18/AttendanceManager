@@ -94,7 +94,7 @@ if (isset($_POST["signup"])) {
             <div id="day">
             </div>
 
-            <img id="icon" src="../media/icon.png" alt="App Icon" width="48" height="48">
+            <img id="icon" src="../media/icon.png" alt="App Icon" width="50" height="50">
 
             <div id="name">
             </div>

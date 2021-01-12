@@ -6,7 +6,8 @@ function openMenu() {
         menu.style.display = "block";
         menuToggle = 1;
         document.getElementById("menuButton").style.backgroundColor = "#2ec76e";
-    } else {
+    } 
+    else {
         menu.style.display = "none";
         menuToggle = 0;
         document.getElementById("menuButton").style.backgroundColor = "#18191f";
@@ -28,6 +29,7 @@ function setHeader() {
         "November",
         "December"
     ];
+    
     let currentDate = new Date();
     let currentYear = currentDate.getFullYear().toString();
     let monthIndex = currentDate.getMonth();

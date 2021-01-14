@@ -10,7 +10,7 @@ body{
 header, footer{
     display: inline-flex;
     background-color: #18191f;
-    border-radius: 10px;
+    border-radius: 12px;
     width: 95%;
     height: fit-content;
     align-items: center;

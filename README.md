@@ -1,2 +1,2 @@
 # AttendanceManager
-A Web Application for college students that helps them manage and maintain their attendance.
+A Web Application for NMIMS college students that helps them manage and see their attendance in detail.

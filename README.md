@@ -11,8 +11,6 @@ Application Screenshots -
 
 ![](Screenshots/Screenshot%20(53).png)
 
-![](Screenshots/Screenshot%20(54).png)
-
 ![](Screenshots/Screenshot%20(55).png)
 
 ![](Screenshots/Screenshot%20(56).png)

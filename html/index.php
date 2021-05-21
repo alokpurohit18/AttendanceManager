@@ -7,6 +7,8 @@
 	<title>Attendance Manager</title>
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel="icon" type="image/jpg" href="../media/icon.png">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Texturina:ital,wght@1,700&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -51,8 +53,6 @@
 			</form>
 
 			<button id="login_dummy" class="login_left" style="display: none;" onclick="validate_login()">Login</button>
-			
-
 
 			<div>
 				- Powered by Google -
@@ -77,7 +77,7 @@
 							valid = true;
 						}
 						if (valid) {
-							localStorage.setItem("default_load","false");
+							localStorage.setItem("default_load", "false");
 						} else {
 							return false;
 						}
@@ -164,7 +164,7 @@
 							valid = true;
 						}
 						if (valid) {
-							localStorage.setItem("default_load","false");
+							localStorage.setItem("default_load", "false");
 							//new account is created. So now put all the values of this account into the database under as student.
 							alert("You have been successfully signed up on this app!");
 						} else {
@@ -187,4 +187,5 @@
 		</section>
 	</div>
 </body>
+
 </html>

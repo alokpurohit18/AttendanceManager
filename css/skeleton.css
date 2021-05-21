@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     color: white;
@@ -7,7 +7,8 @@ body{
     margin-right: auto;
 }
 
-header, footer{
+header,
+footer {
     display: inline-flex;
     background-color: #18191f;
     border-radius: 12px;
@@ -19,20 +20,21 @@ header, footer{
     font-size: 24px;
 }
 
-.left{
+.left {
     float: left;
 }
-.center{
+
+.center {
     display: inline-flex;
     align-items: center;
     margin: auto;
 }
 
-.right{
+.right {
     float: right;
 }
 
-#menuButton{
+#menuButton {
     font-size: 36px;
     color: white;
     background-color: #18191f;
@@ -41,31 +43,32 @@ header, footer{
     cursor: pointer;
 }
 
-#day{
+#day {
     background-color: #2ec76e;
     border: 3px solid white;
-    border-radius: 50%;
+    border-radius: 100%;
     width: 6%;
     padding: 10px;
 }
 
-#icon{
+#icon {
     border: 3px solid white;
     border-radius: 50%;
     padding: 1px;
     margin-left: 20px;
 }
 
-.center div{
+.center div {
     margin-left: 20px;
 }
 
-#year, #month{
+#year,
+#month {
     width: inherit;
     text-align: right;
 }
 
-#info{
+#info {
     text-decoration: none;
     color: white;
     border: 3px solid white;
@@ -73,43 +76,48 @@ header, footer{
     border-radius: 50%;
 }
 
-#name{
+#info:hover {
+    background-color: #2ec76e;
+}
+
+#name {
     text-align: left;
 }
 
-menu{
+menu {
     float: left;
     text-align: left;
-    background-color: #18191f;
-    width: 20%;
+    background-color: #2ec76e;
+    width: 15%;
     margin-left: 2%;
     margin-top: 1px;
     padding: 0px;
     border-radius: 5px;
+    border: 3px solid white;
     display: none;
     animation-name: animation;
-    animation-duration: 1000ms;
+    animation-duration: 500ms;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     transform-origin: top center;
     position: fixed;
 }
 
-@keyframes animation{
-    0%{
+@keyframes animation {
+    0% {
         transform: rotateX(-90deg) translateY(45px);
     }
 
-    60%{
+    60% {
         transform: translateX(60deg);
     }
 
-    100%{
+    100% {
         transform: rotateX(0deg) translateY(0px);
     }
 }
 
-menu a{
+menu a {
     border-radius: 5px;
     display: block;
     text-decoration: none;
@@ -118,29 +126,33 @@ menu a{
     padding: 10px;
 }
 
-menu a:hover{
-    background-color: #2ec76e;
+menu a:hover {
+    background-color: #18191f;
 }
 
-footer{
+footer {
     position: fixed;
     bottom: 2%;
     left: 2%;
     vertical-align: middle;
 }
 
-footer span{
+footer span {
     margin-right: 20px;
 }
 
-footer img:hover{
+footer img:hover {
     transform: scale(1.1);
 }
 
-#privacyPolicy{
+#privacyPolicy {
     color: white;
     padding: 10px;
     text-decoration: none;
     border: 3px solid white;
     border-radius: 10px;
+}
+
+#privacyPolicy:hover {
+    background-color: #2ec76e;
 }

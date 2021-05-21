@@ -42,9 +42,9 @@
         <menu>
             <a href="home2.php">Home</a>
             <a href="subjects.php">Subjects</a>
-            <a href="criteria.php">Edit Attendance Criteria</a>
+            <a href="criteria.php">Edit Criteria</a>
             <a href="help.html">How to Use</a>
-            <a href="developer.html">Developer Information</a>
+            <a href="developer.html">Developer Info</a>
             <a href="privacy.html">Privacy Policy</a>
             <a href="contact.html">Contact Us</a>
         </menu>
@@ -118,7 +118,6 @@
     </section>
 
     <script>
-
         for (let i = 0; i < <?= $i ?>; i++) {
             let present_button = document.createElement("button");
             present_button.innerHTML = "✔";
@@ -151,14 +150,6 @@
             buttons.appendChild(present_button);
             buttons.appendChild(absent_button);
         }
-
-        /*function action() {
-            $query = "UPDATE subject SET hours_completed = ($subject_hours_completed[0] + 1),
-                          hours_present = ($subject_hours_present[0] + 1), 
-                          attendance = ((($subject_hours_present[0] + 1)/($subject_hours_completed[0] + 1))*100)
-                          WHERE (email='$email' AND name='$subject_name[0]')";
-            $result = $conn->query($query);
-        }*/
     </script>
 
     <footer>
@@ -170,7 +161,7 @@
                 Official Page -
             </span>
             <span>
-                <a href="https://twitter.com/AlokPur32580593?s=08">
+                <a href="https://twitter.com/AlokPur32580593?s=08" target="_blank">
                     <img src="../media/twitter.png" alt="Twitter Icon" height="48px" width="48px">
                 </a>
             </span>

@@ -3,20 +3,22 @@ section {
     margin-right: auto;
     margin-top: 20px;
     width: 85%;
-    height: 550px;
+    height: 510px;
     background-color: #18191f;
     border-radius: 10px;
     font-size: 24px;
 }
 
-h3{
+h3 {
     font-size: 32px;
     margin-top: 10px;
     padding-top: 20px;
     margin-bottom: 20px;
 }
 
-table, td, tr{
+table,
+td,
+tr {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid white;
@@ -24,11 +26,11 @@ table, td, tr{
     padding: 10px;
 }
 
-table{
+table {
     width: 90%;
 }
 
-#present_button{
+#present_button {
     background-color: #2ec76e;
     border-radius: 50%;
     height: 30px;
@@ -40,7 +42,7 @@ table{
     margin-left: 5px;
 }
 
-#absent_button{
+#absent_button {
     background-color: #ff0505;
     border-radius: 50%;
     height: 30px;

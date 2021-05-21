@@ -42,9 +42,9 @@
         <menu>
             <a href="home2.php">Home</a>
             <a href="subjects.php">Subjects</a>
-            <a href="criteria.php">Edit Attendance Criteria</a>
+            <a href="criteria.php">Edit Criteria</a>
             <a href="help.html">How to Use</a>
-            <a href="developer.html">Developer Information</a>
+            <a href="developer.html">Developer Info</a>
             <a href="privacy.html">Privacy Policy</a>
             <a href="contact.html">Contact Us</a>
         </menu>
@@ -73,12 +73,11 @@
                 slideValue.classList.remove("show");
             });
 
-            function edit_criteria(){
+            function edit_criteria() {
                 var r = confirm("Do you want to set new attendance criteria?");
-                if(r == false){
+                if (r == false) {
                     return false;
-                }
-                else{
+                } else {
                     localStorage.setItem("criteria", document.getElementById("slider").value);
                 }
             }

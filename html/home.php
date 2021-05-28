@@ -69,6 +69,9 @@ if (isset($_POST["signup"])) {
 <html lang="en">
 
 <head>
+    <script language="javascript" type="text/javascript">
+        window.history.forward();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance Manager- Home</title>

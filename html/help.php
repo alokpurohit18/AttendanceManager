@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <script language="javascript" type="text/javascript">
+        window.history.forward();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance Manager - Help</title>
@@ -34,19 +37,19 @@
         </div>
 
         <div class="right">
-            <a id="info" href="../html/index.php">l</a>
+            <a id="info" href="../html/logout.php">l</a>
         </div>
     </header>
 
     <main>
         <menu>
-            <a href="home.php">Home</a>
+            <a href="home2.php">Home</a>
             <a href="subjects.php">Subjects</a>
             <a href="criteria.php">Edit Criteria</a>
-            <a href="help.html">How to Use</a>
-            <a href="developer.html">Developer Info</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="help.php">How to Use</a>
+            <a href="developer.php">Developer Info</a>
+            <a href="privacy.php">Privacy Policy</a>
+            <a href="contact.php">Contact Us</a>
         </menu>
     </main>
 
@@ -93,9 +96,7 @@
             <p>
                 Here's a video tutorial demonstrating and explaining how to use the app in a very easy way -
             </p>
-            <iframe src="https://www.youtube.com/embed/TxPKu9779Y0" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe src="https://www.youtube.com/embed/TxPKu9779Y0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
             <h2>
                 Thank You !!!

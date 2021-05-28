@@ -31,7 +31,7 @@ if (isset($_POST["login"])) {
         }
 
         if ($loggedIn === false) {
-            header("Location: index.php");
+            header("location:index.php?login=failed");
         }
     }
 }
@@ -99,7 +99,9 @@ if (isset($_POST["signup"])) {
             localStorage.setItem("default_load", "true");
         }
     </script>
-    <script>window.location.href = "home2.php";</script>
+    <script>
+        window.location.href = "home2.php";
+    </script>
 </body>
 
 </html>

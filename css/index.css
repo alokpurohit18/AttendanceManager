@@ -8,14 +8,6 @@ body {
     margin-right: auto;
 }
 
-#container {
-    margin-top: 15px;
-    padding: 0px 20px 20px 20px;
-    background-color: #20a15c;
-    border: 3px solid black;
-    border-radius: 15px;
-}
-
 h1 {
     font-family: 'Texturina', serif;
     margin-top: 0;
@@ -31,6 +23,19 @@ h2 {
     margin-top: -25%;
     margin-bottom: 10%;
     padding-right: 5px;
+}
+
+section div {
+    font-size: 24px;
+    clear: both;
+}
+
+#container {
+    margin-top: 15px;
+    padding: 0px 20px 20px 20px;
+    background-color: #20a15c;
+    border: 3px solid black;
+    border-radius: 15px;
 }
 
 #email,
@@ -78,9 +83,4 @@ input {
     background-color: #1b241d;
     cursor: pointer;
     transform: scale(1.1);
-}
-
-section div {
-    font-size: 24px;
-    clear: both;
 }

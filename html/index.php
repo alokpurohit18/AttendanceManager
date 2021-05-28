@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Attendance Manager</title>
 	<link rel="stylesheet" href="../css/index.css">
-	<link rel="icon" type="image/jpg" href="../media/icon.png">
+	<?php echo '<link rel="icon" type="image/jpg" href="../media/icon.png">'; ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Texturina:ital,wght@1,700&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
@@ -28,6 +28,11 @@
 				<div>
 					<input type="password" id="password" name="password" placeholder="Password">
 				</div>
+				<?php
+				if (isset($_GET["login"]) && $_GET["login"] == 'failed') {
+					echo '<div style="font-size: 16px; color: #ba135d; font-family: Ubuntu, sans-serif; margin-top: 10px; font-weight: bold;">Wrong Username or Password</div>';
+				}
+				?>
 				<input type="submit" class="login_left" id="login" name="login" value="Login">
 			</form>
 

@@ -57,6 +57,12 @@
 				<div>
 					<input type="number" id="age" name="age" placeholder="Age" min="12" max="65">
 				</div>
+				<div>
+					<input type="text" id="course" name="course" placeholder="Course">
+				</div>
+				<div>
+					<input type="text" id="college_name" name="college_name" placeholder="College Name">
+				</div>
 				<input type="submit" class="signup_right" id="signup" name="signup" value="Sign Up">
 			</form>
 

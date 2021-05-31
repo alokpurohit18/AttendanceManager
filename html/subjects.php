@@ -112,6 +112,7 @@
             $total = count($_POST['subject_hours_present']);
             $subject_hours_present = $_POST['subject_hours_present'];
             $subject_hours_absent = $_POST['subject_hours_absent'];
+            $sum = 0;
             for ($i = 0; $i < $total; $i++) {
                 $present = $subject_hours_present[$i];
                 $absent = $subject_hours_absent[$i];
@@ -121,8 +122,12 @@
                 $subject_id = $i + 1;
                 $query1 = "UPDATE subject SET hours_present = '" . $present . "', hours_absent = '" . $absent . "', hours_completed = '" . $total_hours . "', attendance = '" . $attendance . "' WHERE email = '$email' AND s_id = '" . $subject_id . "';";
                 $conn->query($query1);
+                $sum = $sum + $attendance;
                 header('Location: subjects.php');
             }
+            $averageAttendance = strval(round($sum / $total));
+            $query2 = "UPDATE student SET attendance = '" . $averageAttendance . "' WHERE email = '$email'";
+            $conn->query($query2);
         }
         ?>
 

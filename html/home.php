@@ -45,8 +45,8 @@ if (isset($_POST["signup"])) {
     $name = $_POST["name"];
     $age = $_POST["age"];
     $criteria = 100;
-    $course = null;
-    $college = null;
+    $_POST["course"];
+    $college = $_POST["college_name"];
     $attendance = 0;
     $dbhost = 'localhost';
     $dbuser = 'root';

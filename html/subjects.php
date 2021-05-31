@@ -7,7 +7,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Manager - Home</title>
+    <title>Attendance Manager - Subjects</title>
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/subjects.css">
     <link rel="icon" type="image/jpg" href="../media/icon.png">
@@ -75,8 +75,10 @@
         $subject_credit = array();
         $subject_atendance = array();
 
+        echo "<h3 style='display: inline-block; margin-right: 1%;'>Subjects</h3>";
+        echo "<button id='add_subject' style='display: inline-block; margin-left: 1%; background-color: #2ec76e; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer; font-size: 24px; '>+</button>";
+
         echo "<form action='subjects.php' method='POST'>";
-        echo "<h3>Subjects</h3>";
         echo "<table>";
         echo "<tr>";
         echo "<td><B>No.</B></td>";
@@ -94,8 +96,8 @@
             echo "<td>" . $row['s_id'] . ".</td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['hours_completed'] . "</td>";
-            echo "<td><input type='number' name='subject_hours_present[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' value='" . $row['hours_present'] . "' /></td>";
-            echo "<td><input type='number' name='subject_hours_absent[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' value='" . $row['hours_absent'] . "' /></td>";
+            echo "<td><input type='number' name='subject_hours_present[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' min=0 value='" . $row['hours_present'] . "' /></td>";
+            echo "<td><input type='number' name='subject_hours_absent[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' min=0 value='" . $row['hours_absent'] . "' /></td>";
             echo "<td>" . $row['attendance'] . "%</td>";
             echo "<td>" . $row['credit'] . "</td>";
             echo "<td><input type='submit' name='update' class='action_button' style='background-color: #2ec76e; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer;' value='✔' /></td>";
@@ -132,7 +134,6 @@
         ?>
 
     </section>
-
 
     <footer>
         <div class="left">

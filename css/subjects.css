@@ -30,26 +30,6 @@ table {
     width: 90%;
 }
 
-#present_button {
+input {
     background-color: #2ec76e;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#absent_button {
-    background-color: #ff0505;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    margin-right: 5px;
-    margin-left: 5px;
 }

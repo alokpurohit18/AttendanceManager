@@ -63,97 +63,71 @@
         $dbpass = '';
         $dbname = 'attendance_system';
 
-
-
         $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
 
         $query = "SELECT * FROM subject WHERE email='$email'";
         $result = $conn->query($query);
         $n = $result->num_rows;
         $subject_name = array();
-        $subject_total_hours = array();
         $subject_hours_completed = array();
         $subject_hours_present = array();
         $subject_hours_absent = array();
         $subject_credit = array();
         $subject_atendance = array();
 
-        while ($row = $result->fetch_assoc()) {
-            $subject_name[] = $row['name'];
-            $subject_total_hours[] = $row['total_hours'];
-            $subject_hours_completed[] = $row['hours_completed'];
-            $subject_hours_present[] = $row['hours_present'];
-            $subject_hours_absent[] = $row['hours_absent'];
-            $subject_credit[] = $row['credit'];
-            $subject_attendance[] = $row['attendance'];
+        echo "<form action='subjects.php' method='POST'>";
+        echo "<h3>Subjects</h3>";
+        echo "<table>";
+        echo "<tr>";
+        echo "<td><B>No.</B></td>";
+        echo "<td><B>Name</B></td>";
+        echo "<td><B>Total Classes</B></td>";
+        echo "<td><B>Present</B></td>";
+        echo "<td><B>Absent</B></td>";
+        echo "<td><B>Attendance</B></td>";
+        echo "<td><B>Credit</B></td>";
+        echo "<td><B>Confirm</B></td>";
+        echo "</tr>";
+
+        while ($row = $result->fetch_array()) {
+            echo "<tr>";
+            echo "<td>" . $row['s_id'] . ".</td>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['hours_completed'] . "</td>";
+            echo "<td><input type='number' name='subject_hours_present[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' value='" . $row['hours_present'] . "' /></td>";
+            echo "<td><input type='number' name='subject_hours_absent[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' value='" . $row['hours_absent'] . "' /></td>";
+            echo "<td>" . $row['attendance'] . "%</td>";
+            echo "<td>" . $row['credit'] . "</td>";
+            echo "<td><input type='submit' name='update' class='action_button' style='background-color: #2ec76e; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer;' value='✔' /></td>";
+            echo "</tr>";
         }
+
+        echo "</table>";
+        echo "</form>";
 
         ?>
 
-        <h3>Subjects</h3>
-        <table>
-            <tr>
-                <td><B>No.</B></td>
-                <td><B>Name</B></td>
-                <td><B>Total<br>Classes</B></td>
-                <td><B>Present</B></td>
-                <td><B>Absent</B></td>
-                <td><B>Attendance</B></td>
-                <td><B>Credit</B></td>
-                <td><B>Action</B></td>
-            </tr>
+        <?php
+        if (isset($_POST['update'])) {
+            $total = count($_POST['subject_hours_present']);
+            $subject_hours_present = $_POST['subject_hours_present'];
+            $subject_hours_absent = $_POST['subject_hours_absent'];
+            for ($i = 0; $i < $total; $i++) {
+                $present = $subject_hours_present[$i];
+                $absent = $subject_hours_absent[$i];
+                $attendance_number = round(($present / ($present + $absent)) * 100);
+                $attendance = strval($attendance_number);
+                $total_hours = $present + $absent;
+                $subject_id = $i + 1;
+                $query1 = "UPDATE subject SET hours_present = '" . $present . "', hours_absent = '" . $absent . "', hours_completed = '" . $total_hours . "', attendance = '" . $attendance . "' WHERE email = '$email' AND s_id = '" . $subject_id . "';";
+                $conn->query($query1);
+                header('Location: subjects.php');
+            }
+        }
+        ?>
 
-            <?php for ($i = 0; $i < count($subject_name); $i++) : ?>
-                <tr>
-                    <td><?= ($i + 1) . "." ?></td>
-                    <td><?= $subject_name[$i]; ?></td>
-                    <td><?= $subject_hours_completed[$i]; ?></td>
-                    <td><?= $subject_hours_present[$i]; ?></td>
-                    <td><?= $subject_hours_absent[$i]; ?></td>
-                    <td><?= $subject_attendance[$i] . "%"; ?></td>
-                    <td><?= $subject_credit[$i]; ?></td>
-                    <td class="buttons"></td>
-                </tr>
-            <?php endfor; ?>
-
-        </table>
     </section>
 
-    <script>
-        for (let i = 0; i < <?= $i ?>; i++) {
-            let present_button = document.createElement("button");
-            present_button.innerHTML = "✔";
-            present_button.style.backgroundColor = "#2ec76e";
-            let absent_button = document.createElement("button");
-            absent_button.style.backgroundColor = "#ff0505";
-            absent_button.innerHTML = "✖";
-            let buttons = document.getElementsByClassName("buttons")[i];
-            present_button.style.borderRadius = "50%";
-            present_button.style.height = "30px";
-            present_button.style.width = "30px";
-            present_button.style.outline = "none";
-            present_button.style.color = "white";
-            present_button.style.cursor = "pointer";
-            present_button.style.marginRight = "5px";
-            present_button.style.marginLeft = "5px";
-            let x = i + 1;
-            let id = (i + 1).toString();
-            present_button.id = id;
-
-            absent_button.style.borderRadius = "50%";
-            absent_button.style.height = "30px";
-            absent_button.style.width = "30px";
-            absent_button.style.outline = "none";
-            absent_button.style.color = "white";
-            absent_button.style.cursor = "pointer";
-            absent_button.style.marginRight = "5px";
-            absent_button.style.marginLeft = "5px";
-
-            buttons.appendChild(present_button);
-            buttons.appendChild(absent_button);
-        }
-    </script>
 
     <footer>
         <div class="left">

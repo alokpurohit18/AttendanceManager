@@ -187,7 +187,12 @@ if (isset($_POST["signup"])) {
             document.getElementById("user_name").innerHTML = localStorage.getItem("name");
             document.getElementById("user_email").innerHTML = localStorage.getItem("email");
             document.getElementById("user_age").innerHTML = localStorage.getItem("age");
-            document.getElementById("user_password").innerHTML = localStorage.getItem("password");
+            let password = localStorage.getItem("password");
+            let hiddenPassword = "";
+            for (let i = 0; i < password.length; i++) {
+                hiddenPassword = hiddenPassword + "*";
+            }
+            document.getElementById("user_password").innerHTML = hiddenPassword;
             document.getElementById("user_course").innerHTML = localStorage.getItem("course");
             document.getElementById("user_college").innerHTML = localStorage.getItem("college");
             document.getElementById("user_criteria").innerHTML = localStorage.getItem("criteria") + "%";

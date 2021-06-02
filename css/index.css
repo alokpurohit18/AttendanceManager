@@ -45,7 +45,7 @@ section div {
 
 #email,
 #email1 {
-    margin-top: 5px;
+    margin-top: -10px;
 }
 
 input {
@@ -67,20 +67,20 @@ input {
     border-radius: 5px;
     width: 25%;
     height: 50px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-bottom: 20px;
     color: white;
     background-color: black;
 }
 
 .signup_right {
     float: right;
-    margin-right: 20%;
+    margin-right: 22%;
 }
 
 .login_left {
     float: left;
-    margin-left: 20%;
+    margin-left: 22%;
 }
 
 .login_left:hover,

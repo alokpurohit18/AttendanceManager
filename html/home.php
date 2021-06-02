@@ -23,7 +23,6 @@ if (isset($_POST["login"])) {
                 $name = $row["name"];
                 $age = $row["age"];
                 $criteria = $row["attendance_criteria"];
-                $course = $row["course"];
                 $college = $row["college_name"];
                 $attendance = $row["attendance"];
                 $loggedIn = true;
@@ -45,7 +44,6 @@ if (isset($_POST["signup"])) {
     $name = $_POST["name"];
     $age = $_POST["age"];
     $criteria = 100;
-    $_POST["course"];
     $college = $_POST["college_name"];
     $attendance = 0;
     $dbhost = 'localhost';
@@ -58,7 +56,7 @@ if (isset($_POST["signup"])) {
     if ($conn->connect_error) {
         die("Failed to connect: " . $conn->connect_error);
     } else {
-        $query = "INSERT INTO student SET email = '$email', name = '$name', age = '$age', password = '$password' ";
+        $query = "INSERT INTO student SET email = '$email', name = '$name', age = '$age', password = '$password', college_name = '$college'";
         $result = $conn->query($query);
     }
 }
@@ -88,7 +86,6 @@ if (isset($_POST["signup"])) {
             let email = "<?= $email ?>";
             let password = "<?= $password ?>";
             let criteria = "<?= $criteria ?>";
-            let course = "<?= $course ?>";
             let college = "<?= $college ?>";
             let attendance = "<?= $attendance ?>";
             localStorage.setItem("name", name);
@@ -96,7 +93,6 @@ if (isset($_POST["signup"])) {
             localStorage.setItem("email", email);
             localStorage.setItem("password", password);
             localStorage.setItem("criteria", criteria);
-            localStorage.setItem("course", course);
             localStorage.setItem("college", college);
             localStorage.setItem("attendance", attendance);
             localStorage.setItem("default_load", "true");

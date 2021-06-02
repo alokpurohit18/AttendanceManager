@@ -17,6 +17,14 @@ section {
     width: 35%;
 }
 
+#personal_heading {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
 #attendance {
     width: 35%;
     background-color: #18191f;

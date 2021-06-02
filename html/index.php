@@ -58,9 +58,6 @@
 					<input type="number" id="age" name="age" placeholder="Age" min="12" max="65">
 				</div>
 				<div>
-					<input type="text" id="course" name="course" placeholder="Course">
-				</div>
-				<div>
 					<input type="text" id="college_name" name="college_name" placeholder="College Name">
 				</div>
 				<input type="submit" class="signup_right" id="signup" name="signup" value="Sign Up">
@@ -117,6 +114,7 @@
 						let confirm_password = document.getElementById("confirm_password").value.trim();
 						let name = document.getElementById("name").value.trim();
 						let age = document.getElementById("age").value;
+						let college = document.getElementById("college_name").value.trim();
 
 						var i;
 						var ch;
@@ -161,6 +159,9 @@
 							valid = false;
 						} else if (password != confirm_password) {
 							alert("Passwords do not match!");
+							valid = false;
+						} else if (college === "" || college === null) {
+							alert("Please enter the name of your college!");
 							valid = false;
 						} else if (name === "" || name === null) {
 							alert("Please enter your name!");

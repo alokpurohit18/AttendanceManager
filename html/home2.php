@@ -23,7 +23,6 @@ if (isset($_POST["login"])) {
                 $name = $row["name"];
                 $age = $row["age"];
                 $criteria = $row["attendance_criteria"];
-                $course = $row["course"];
                 $college = $row["college_name"];
                 $attendance = $row["attendance"];
                 $loggedIn = true;
@@ -45,7 +44,6 @@ if (isset($_POST["signup"])) {
     $name = $_POST["name"];
     $age = $_POST["age"];
     $criteria = 100;
-    $course = $_POST["course"];
     $college = $_POST["college_name"];
     $attendance = 0;
     $dbhost = 'localhost';
@@ -58,7 +56,7 @@ if (isset($_POST["signup"])) {
     if ($conn->connect_error) {
         die("Failed to connect: " . $conn->connect_error);
     } else {
-        $query = "INSERT INTO student SET email = '$email', name = '$name', age = '$age', password = '$password' ";
+        $query = "INSERT INTO student SET email = '$email', name = '$name', age = '$age', password = '$password', college_name = '$college'";
         $result = $conn->query($query);
     }
 }
@@ -122,6 +120,7 @@ if (isset($_POST["signup"])) {
 
     <section>
         <article id="personal_info" class="left">
+            <div id="personal_heading">Student Details</div>
             <div>
                 Name :
                 <span id="user_name"></span>
@@ -141,10 +140,6 @@ if (isset($_POST["signup"])) {
             <div>
                 Attendance Criteria :
                 <span id="user_criteria"></span>
-            </div>
-            <div>
-                Course :
-                <span id="user_course"></span>
             </div>
             <div>
                 College :
@@ -193,7 +188,6 @@ if (isset($_POST["signup"])) {
                 hiddenPassword = hiddenPassword + "*";
             }
             document.getElementById("user_password").innerHTML = hiddenPassword;
-            document.getElementById("user_course").innerHTML = localStorage.getItem("course");
             document.getElementById("user_college").innerHTML = localStorage.getItem("college");
             document.getElementById("user_criteria").innerHTML = localStorage.getItem("criteria") + "%";
             document.getElementById("attendance_value").innerHTML = localStorage.getItem("attendance") + "%";

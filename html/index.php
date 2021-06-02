@@ -180,8 +180,10 @@
 						}
 						if (valid) {
 							localStorage.setItem("default_load", "false");
-							//new account is created. So now put all the values of this account into the database under as student.
+							//new account is created.
+							//So now put all the values of this account into the database under as student.
 							alert("You have been successfully signed up on this app!");
+
 						} else {
 							return false;
 						}

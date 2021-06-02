@@ -55,16 +55,14 @@
 
     <section id="main_container">
         <?php
-
+        ob_start();
         session_start();
         $email = $_SESSION["email"];
         $dbhost = 'localhost';
         $dbuser = 'root';
         $dbpass = '';
         $dbname = 'attendance_system';
-
         $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
         $query = "SELECT * FROM subject WHERE email='$email'";
         $result = $conn->query($query);
         $n = $result->num_rows;
@@ -74,14 +72,11 @@
         $subject_hours_absent = array();
         $subject_credit = array();
         $subject_atendance = array();
-
         echo "<h3 style='display: inline-block; margin-right: 1%;'>Subjects</h3>";
         echo "<button id='add_subject' style='display: inline-block; margin-left: 1%; background-color: #2ec76e; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer; font-size: 24px; '>+</button>";
-
         echo "<form action='subjects.php' method='POST'>";
         echo "<table>";
         echo "<tr>";
-        echo "<td><B>No.</B></td>";
         echo "<td><B>Name</B></td>";
         echo "<td><B>Total Classes</B></td>";
         echo "<td><B>Present</B></td>";
@@ -90,10 +85,8 @@
         echo "<td><B>Credit</B></td>";
         echo "<td><B>Confirm</B></td>";
         echo "</tr>";
-
         while ($row = $result->fetch_array()) {
             echo "<tr>";
-            echo "<td>" . $row['s_id'] . ".</td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['hours_completed'] . "</td>";
             echo "<td><input type='number' name='subject_hours_present[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' min=0 value='" . $row['hours_present'] . "' /></td>";
@@ -103,18 +96,13 @@
             echo "<td><input type='submit' name='update' class='action_button' style='background-color: #2ec76e; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer;' value='✔' /></td>";
             echo "</tr>";
         }
-
         echo "</table>";
         echo "</form>";
-
-        ?>
-
-        <?php
         if (isset($_POST['update'])) {
             $total = count($_POST['subject_hours_present']);
+            echo "<script>console.log('Total: " . $total . "' );</script>";
             $subject_hours_present = $_POST['subject_hours_present'];
             $subject_hours_absent = $_POST['subject_hours_absent'];
-            $sum = 0;
             for ($i = 0; $i < $total; $i++) {
                 $present = $subject_hours_present[$i];
                 $absent = $subject_hours_absent[$i];
@@ -125,15 +113,23 @@
                 $query1 = "UPDATE subject SET hours_present = '" . $present . "', hours_absent = '" . $absent . "', hours_completed = '" . $total_hours . "', attendance = '" . $attendance . "' WHERE email = '$email' AND s_id = '" . $subject_id . "';";
                 $conn->query($query1);
                 $sum = $sum + $attendance;
-                header('Location: subjects.php');
+                header("Location: subjects.php");
             }
             $averageAttendance = strval(round($sum / $total));
             $query2 = "UPDATE student SET attendance = '" . $averageAttendance . "' WHERE email = '$email'";
             $conn->query($query2);
         }
+        ob_end_flush();
         ?>
-
     </section>
+
+    <script>
+        document.getElementById("add_subject").addEventListener('click', function(event) {
+            let params = "scrollbars=no, resizable=no, status=no, location=no, toolbar=no, menubar=no, width=500,height=450, left=500, top=200";
+
+            open("add_subject.php?email=" + "<?= $email ?>", "add_subject_window", params);
+        });
+    </script>
 
     <footer>
         <div class="left">

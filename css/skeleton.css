@@ -10,7 +10,7 @@ body {
 header,
 footer {
     display: inline-flex;
-    background-color: #18191f;
+    background-color: #02475e;
     border-radius: 12px;
     width: 95%;
     height: fit-content;
@@ -69,6 +69,7 @@ footer {
 }
 
 #info {
+    background-color: #18191f;
     text-decoration: none;
     color: white;
     border: 3px solid white;
@@ -128,7 +129,7 @@ menu a {
 }
 
 menu a:hover {
-    background-color: #18191f;
+    background-color: #02475e;
 }
 
 footer {
@@ -147,6 +148,7 @@ footer img:hover {
 }
 
 #privacyPolicy {
+    background-color: #18191f;
     color: white;
     padding: 10px;
     text-decoration: none;

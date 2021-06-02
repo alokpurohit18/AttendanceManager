@@ -101,7 +101,7 @@
             </span>
         </div>
         <div class="right">
-            <a id="privacyPolicy" href="privacy.html">Privacy Policy</a>
+            <a id="privacyPolicy" href="privacy.php">Privacy Policy</a>
         </div>
     </footer>
 

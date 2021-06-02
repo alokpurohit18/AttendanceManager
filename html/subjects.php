@@ -74,9 +74,11 @@
         $subject_atendance = array();
         echo "<h3 style='display: inline-block; margin-right: 1%;'>Subjects</h3>";
         echo "<button id='add_subject' style='display: inline-block; margin-left: 1%; background-color: #2ec76e; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer; font-size: 24px; '>+</button>";
+        echo "<button id='remove_subject' style='display: inline-block; margin-left: 1%; background-color: #cf0000; border-radius: 50%; height: 30px; width: 30px; outline: none; color: white; cursor: pointer; font-size: 24px; font-weight: bold;'>-</button>";
         echo "<form action='subjects.php' method='POST'>";
         echo "<table>";
         echo "<tr>";
+        echo "<td><B>ID</B></td>";
         echo "<td><B>Name</B></td>";
         echo "<td><B>Total Classes</B></td>";
         echo "<td><B>Present</B></td>";
@@ -87,6 +89,7 @@
         echo "</tr>";
         while ($row = $result->fetch_array()) {
             echo "<tr>";
+            echo "<td>" . $row['s_id'] . "</td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['hours_completed'] . "</td>";
             echo "<td><input type='number' name='subject_hours_present[]' style='background-color: #18191f; color: white; width: 25%; font-size: 24px; border: 1px solid #18191f; text-align: center;' min=0 value='" . $row['hours_present'] . "' /></td>";
@@ -128,6 +131,12 @@
             let params = "scrollbars=no, resizable=no, status=no, location=no, toolbar=no, menubar=no, width=500,height=450, left=500, top=200";
 
             open("add_subject.php?email=" + "<?= $email ?>", "add_subject_window", params);
+        });
+
+        document.getElementById("remove_subject").addEventListener('click', function(event) {
+            let params = "scrollbars=no, resizable=no, status=no, location=no, toolbar=no, menubar=no, width=500,height=250, left=500, top=200";
+
+            open("remove_subject.php?email=" + "<?= $email ?>", "remove_subject_window", params);
         });
     </script>
 

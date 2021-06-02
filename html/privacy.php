@@ -58,7 +58,7 @@
         </div>
 
         <div class="right">
-            <a id="info" href="../html/logout.php">l</a>
+            <a id="info" href="../html/logout.php">L</a>
         </div>
     </header>
 

@@ -1,11 +1,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("../media/wallpaper.jpg");
+    background: url("../media/wallpaper.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     text-align: center;
     color: white;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 h1 {
